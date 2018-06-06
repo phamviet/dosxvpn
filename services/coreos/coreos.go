@@ -41,6 +41,7 @@ write_files:
       -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 10 --rttl --name SSH -j DROP
       -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
       -A INPUT -p udp -m multiport --dports 500,4500 -j ACCEPT
+      -A INPUT -p tcp --dport 3000 -j ACCEPT
       -A INPUT -p tcp --destination-port 443 -j REJECT --reject-with tcp-reset
       -A INPUT -p udp --destination-port 80 -j REJECT --reject-with icmp-port-unreachable
       -A INPUT -p udp --destination-port 443 -j REJECT --reject-with icmp-port-unreachable
@@ -77,6 +78,7 @@ write_files:
       -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 10 --rttl --name SSH -j DROP
       -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
       -A INPUT -p udp -m multiport --dports 500,4500 -j ACCEPT
+      -A INPUT -p tcp --dport 3000 -j ACCEPT
       -A INPUT -p tcp --destination-port 443 -j REJECT --reject-with tcp-reset
       -A INPUT -p udp --destination-port 80 -j REJECT --reject-with icmp6-port-unreachable
       -A INPUT -p udp --destination-port 443 -j REJECT --reject-with icmp6-port-unreachable
