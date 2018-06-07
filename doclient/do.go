@@ -178,6 +178,13 @@ func (c *Client) generateInboundFirewallRules() []godo.InboundRule {
 			},
 		},
 		{
+			Protocol:  "tcp",
+			PortRange: "3000",
+			Sources: &godo.Sources{
+				Addresses: []string{"0.0.0.0/0", "::/0"},
+			},
+		},
+		{
 			Protocol:  "udp",
 			PortRange: "500",
 			Sources: &godo.Sources{
